@@ -11,6 +11,10 @@ models/*
 outputs/*
 !outputs/.gitkeep
 
+# Generated browser demo (regenerate with `python -m scripts.export_web_demo`);
+# the ~8MB self-contained HTML with embedded model weights doesn't belong in git.
+web/
+
 __pycache__/
 *.pyc
 .ipynb_checkpoints/

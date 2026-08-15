@@ -101,6 +101,19 @@ copy of each image with the predicted label overlaid. Predictions below
 — for a driver-facing tool, a confident wrong answer is worse than an
 honest "not sure."
 
+## Browser demo
+
+```bash
+python -m scripts.export_web_demo
+```
+
+Builds `web/traffic_sign_demo.html`, a single self-contained page that runs
+the trained CNN entirely client-side (own hand-written JS forward pass
+mirroring `src/model.py`, no TensorFlow.js, no server) -- open it directly
+in a browser, or host it anywhere static files are served. Regenerate it
+any time you retrain, since it embeds a snapshot of `models/traffic_sign_cnn_best.keras`'s
+weights (~6MB) plus the fonts in `scripts/fonts/`.
+
 ## Model
 
 Three convolutional blocks (32 → 64 → 128 filters, each Conv-BN-Conv-BN-
