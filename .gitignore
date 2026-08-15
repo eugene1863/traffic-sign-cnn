@@ -1,0 +1,24 @@
+# Dataset (fetch with `python download_data.py` instead of committing it)
+data/*
+!data/.gitkeep
+
+# Trained model weights are large binaries that don't belong in git history;
+# retrain with `python -m src.train`, or attach a release build separately.
+models/*
+!models/.gitkeep
+
+# Generated logs/plots/reports (regenerate with train.py / evaluate.py / predict.py)
+outputs/*
+!outputs/.gitkeep
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Claude Code local session/tooling state, not part of the project
+.claude/
+
+# Locally-installed GitHub CLI (portable install, not part of the project)
+.tools/
